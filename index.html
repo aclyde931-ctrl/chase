@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Maze Escape: Love on the Run!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Maze Escape! 🏃‍♀️💨</h1>
+    <p class="instructions">Reach the door (🚪) before your boyfriend (👦) catches you!</p>
+
+    <div id="game-container">
+        <canvas id="mazeCanvas" width="600" height="600"></canvas>
+        <div id="overlay">
+            <div id="status-text">Ready to Run?</div>
+            <button id="start-btn" onclick="startGame()">Start Game</button>
+        </div>
+    </div>
+
+    <!-- Mobile Virtual Controller -->
+    <div id="mobile-controller">
+        <div class="row">
+            <button class="ctrl-btn" id="btn-up">▲</button>
+        </div>
+        <div class="row">
+            <button class="ctrl-btn" id="btn-left">◀</button>
+            <div class="spacer"></div>
+            <button class="ctrl-btn" id="btn-right">▶</button>
+        </div>
+        <div class="row">
+            <button class="ctrl-btn" id="btn-down">▼</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

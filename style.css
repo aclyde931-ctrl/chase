@@ -1,0 +1,150 @@
+:root {
+    --pink-primary: #ff6b8b;
+    --pink-dark: #ff4757;
+    --bg-color: #ffeef2;
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+    background-color: var(--bg-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: var(--pink-dark);
+    margin: 5px 0;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+p.instructions {
+    color: #555;
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+#game-container {
+    position: relative;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(255, 107, 139, 0.2);
+    max-width: 100%;
+}
+
+canvas {
+    display: block;
+    background-color: #f7f9fa;
+    border: 4px solid var(--pink-primary);
+    border-radius: 4px;
+    /* Keeps canvas perfectly responsive on smaller mobile screens */
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.92);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+#overlay.hidden {
+    display: none;
+}
+
+#status-text {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--pink-dark);
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+#start-btn {
+    background-color: var(--pink-primary);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+#start-btn:hover {
+    background-color: var(--pink-dark);
+}
+
+/* --- Mobile D-Pad Controller Styles --- */
+#mobile-controller {
+    display: none; /* Hidden on desktop by default */
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.ctrl-btn {
+    width: 60px;
+    height: 60px;
+    background-color: var(--pink-primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    touch-action: manipulation; /* Prevents double-tap zoom delay on mobile */
+}
+
+.ctrl-btn:active {
+    background-color: var(--pink-dark);
+    transform: scale(0.92);
+}
+
+.spacer {
+    width: 60px;
+    height: 60px;
+    margin: 4px;
+}
+
+/* Media Query: Show the controller only on screens smaller than a tablet */
+@media (max-width: 768px) {
+    #mobile-controller {
+        display: flex;
+    }
+    h1 { font-size: 1.5rem; }
+}
