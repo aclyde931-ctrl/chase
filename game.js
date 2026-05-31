@@ -33,7 +33,7 @@ let isGameRunning = false;
 let enemyMoveCounter = 0;
 
 // Fast boyfriend speed configuration
-const enemySpeedInterval = 18; 
+const enemySpeedInterval = 20; 
 
 function initGame() {
     player = { x: 0, y: 0, emoji: "👩‍🦰" };
